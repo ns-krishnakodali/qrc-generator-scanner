@@ -8,21 +8,20 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button normal;
-    Button encrypted;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        normal = (Button)findViewById(R.id.NormalQr);
-        encrypted = (Button)findViewById(R.id.EncryptedQr);
-        normal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Scanner.class));
-            }
-        });
+	Button normal;
+	Button encrypted;
 
-
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		normal = (Button) findViewById(R.id.NormalQr);
+		encrypted = (Button) findViewById(R.id.EncryptedQr);
+		normal.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(getApplicationContext(), Scanner.class));
+			}
+		});
+	}
 }

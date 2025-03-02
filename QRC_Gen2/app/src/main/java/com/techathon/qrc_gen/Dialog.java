@@ -11,38 +11,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class Dialog extends AppCompatDialogFragment {
-    private  WarningDialogListener listener;
-    @NonNull
-    @Override
-    public android.app.Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Warning").setMessage("Deleting removes the whole information related to this Item.")
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+	private WarningDialogListener listener;
 
-                    }
-                })
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        listener.onYesClicked();
-                    }
-                });
-        return builder.create();
-    }
-    public interface WarningDialogListener {
-        void onYesClicked();
+	@NonNull
+	@Override
+	public android.app.Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setTitle("Warning").setMessage("Deleting removes the whole information related to this Item.")
+				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i) {
 
-    }
+					}
+				})
+				.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i) {
+						listener.onYesClicked();
+					}
+				});
+		return builder.create();
+	}
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        try {
-            listener = (WarningDialogListener) context;
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+	public interface WarningDialogListener {
+		void onYesClicked();
+	}
+
+	@Override
+	public void onAttach(@NonNull Context context) {
+		super.onAttach(context);
+		try {
+			listener = (WarningDialogListener) context;
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+	}
 }
