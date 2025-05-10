@@ -1,0 +1,38 @@
+# Ignore Android Studio files
+*.iml
+.idea/
+.gradle/
+build/
+local.properties
+*.apk
+*.ap_
+*.db
+*.log
+
+# Generated files
+bin/
+gen/
+
+# Gradle
+.gradle/
+build/
+
+# Android Studio 4.1+ / JetBrains
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/gradle.xml
+.idea/libraries
+
+# User-specific files
+.idea/.name
+.idea/modules.xml
+.idea/.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
